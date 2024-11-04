@@ -1,0 +1,90 @@
+{
+    "name": "Power FX Theme",
+    "type": "dark",
+    "colors": {
+        "editor.foreground": "#D4D4D4",
+        "editor.background": "#1E1E1E",
+        "editorCursor.foreground": "#FFFFFF",
+        "editor.lineHighlightBackground": "#2A2A2A",
+        "editorLineNumber.foreground": "#858585",
+        "editor.selectionBackground": "#264F78",
+        "editor.inactiveSelectionBackground": "#3A3D41"
+    },
+    "tokenColors": [
+        {
+            "scope": "comment.line.double-slash.powerfx",
+            "settings": {
+                "foreground": "#6A9955", // Green color for single-line comments
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "comment.block.powerfx",
+            "settings": {
+                "foreground": "#6A9955", // Green color for block comments
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "constant.language.boolean.powerfx",
+            "settings": {
+                "foreground": "#569CD6" // Blue color for boolean literals
+            }
+        },
+        {
+            "scope": "keyword.control.powerfx",
+            "settings": {
+                "foreground": "#C586C0", // Purple color for control keywords
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.operator.powerfx",
+            "settings": {
+                "foreground": "#D4D4D4" // Default color for operators
+            }
+        },
+        {
+            "scope": "string.quoted.double.powerfx",
+            "settings": {
+                "foreground": "#CE9178" // Orange color for strings
+            }
+        },
+        {
+            "scope": "constant.character.escape.powerfx",
+            "settings": {
+                "foreground": "#D7BA7D" // Yellow color for escape sequences
+            }
+        },
+        {
+            "scope": "constant.numeric.powerfx",
+            "settings": {
+                "foreground": "#B5CEA8" // Light green color for numbers
+            }
+        },
+        {
+            "scope": "variable.other.identifier.powerfx",
+            "settings": {
+                "foreground": "#D4D4D4" // Light blue color for identifiers
+            }
+        },
+        {
+            "scope": "function.builtin.powerfx",
+            "settings": {
+                "foreground": "#DCDCAA" // Gold color for built-in functions
+            }
+        },
+        {
+            "scope": "function.application.powerfx",
+            "settings": {
+                "foreground": "#4EC9B0" // Teal color for application functions
+            }
+        },
+        {
+            "scope": "support.function.powerfx",
+            "settings": {
+                "foreground": "#4eb0c9" // Teal color for application functions
+            }
+        }
+    ]
+}

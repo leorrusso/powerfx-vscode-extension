@@ -1,0 +1,72 @@
+{
+    "scopeName": "source.powerfx",
+    "fileTypes": ["fx"],
+    "patterns": [
+        {
+            "name": "comment.line.double-slash.powerfx",
+            "match": "//.*$"
+        },
+        {
+            "name": "comment.block.powerfx",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "patterns": [
+                {
+                    "match": ".*",
+                    "name": "comment.block.content.powerfx"
+                }
+            ]
+        },
+        {
+            "name": "constant.language.boolean.powerfx",
+            "match": "\\b(true|false)\\b"
+        },
+        {
+            "name": "keyword.control.powerfx",
+            "match": "\\b(If|Switch|And|Or|Not|Parent|Self|ThisItem|ThisRecord)\\b"
+        },
+        {
+            "name": "keyword.operator.powerfx",
+            "match": "(=|<|>|<=|>=|<>|\\+|\\-|\\*|\\/|\\^|&&|\\|\\||&|in|exactin|%)"
+        },
+        {
+            "name": "string.quoted.double.powerfx",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.powerfx",
+                    "match": "\\\\."
+                },
+                {
+                    "name": "string.quoted.double.content.powerfx",
+                    "match": "[^\"]+"
+                }
+            ]
+        },
+        {
+            "name": "string.quoted.single.powerfx",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.powerfx",
+                    "match": "\\\\."
+                },
+                {
+                    "name": "string.quoted.single.content.powerfx",
+                    "match": "[^']+"
+                }
+            ]
+        },
+        {
+            "name": "constant.numeric.powerfx",
+            "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+        },
+        {
+            "name": "support.function.powerfx",
+            "match": "\\b(Abs|Acceleration|Acos|Acot|AddColumns|AIClassify|AIExtract|AIReply|AISentiment|AISummarize|AITranslate|App|Asin|Assert|As|AsType|Atan|Atan2|Average|Back|Blank|Boolean|Calendar|Char|Choices|Clear|ClearCollect|ClearData|Clock|Coalesce|Collect|Color|ColorFade|ColorValue|Column|ColumnNames|Compass|Concat|Concatenate|Concurrent|Connection|Copy|Count|Cos|Cot|CountA|CountIf|CountRows|DataSourceInfo|Date|DateAdd|DateDiff|DateTime|DateTimeValue|DateValue|Day|Dec2Hex|Defaults|Degrees|Disable|Distinct|Download|DropColumns|EDate|EditForm|Enable|EncodeHTML|EncodeUrl|EndsWith|EOMonth|Error|Errors|exactin|Exit|Exp|Filter|Find|First|FirstN|ForAll|GroupBy|GUID|HashTags|Hex2Dec|Host|Hour|If|IfError|in|Index|Int|IsBlank|IsBlankOrError|IsEmpty|IsError|IsMatch|IsNumeric|ISOWeekNum|IsToday|IsType|IsUTCToday|JSON|Language|Last|LastN|Launch|Left|Len|Ln|LoadData|Location|Log|LookUp|Lower|Match|MatchAll|Max|Mid|Min|Minute|Mod|Month|Navigate|NewForm|Not|Notify|Now|Or|Param|Parent|ParseJSON|Patch|PDF|Pi|PlainText|Power|Proper|Radians|Rand|RandBetween|ReadNFC|RecordInfo|Refresh|Relate|Remove|RemoveIf|RenameColumns|Replace|RequestHide|Reset|ResetForm|Revert|RGBA|Right|Round|RoundDown|RoundUp|SaveData|Search|Second|Select|Self|Sequence|SendAppNotification|Set|SetFocus|SetProperty|ShowColumns|ShowHostInfo|Shuffle|Sin|Sort|SortByColumns|Split|Sqrt|StartsWith|StdevP|Substitute|SubmitForm|Sum|Switch|Table|Tan|Text|ThisItem|ThisRecord|Time|TimeValue|TimeZoneOffset|Today|Trace|Trim|TrimEnds|Trunc|Ungroup|UniChar|Unrelate|Update|UpdateContext|UpdateIf|Upper|User|UTCNow|UTCToday|Validate|Value|VarP|ViewForm|Weekday|WeekNum|With|Year)\\b"
+        }
+    ],
+    "uuid": "12345678-90ab-cdef-1234-567890abcdef"
+}

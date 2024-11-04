@@ -1,0 +1,45 @@
+{
+    "name": "powerfx",
+    "displayName": "Power FX Interpreter",
+    "description": "An extension that allows to read Power FX",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/leorrusso/powerfx-vscode-extension"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "powerfx",
+                "aliases": [
+                    "Power FX",
+                    "powerfx"
+                ],
+                "extensions": [
+                    ".fx"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "powerfx",
+                "scopeName": "source.powerfx",
+                "path": "./syntaxes/powerfx.tmLanguage.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "Power FX Theme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/powerfx-color-theme.json"
+            }
+        ]
+    }
+}

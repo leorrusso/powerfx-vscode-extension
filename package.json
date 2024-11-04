@@ -21,8 +21,13 @@
         "languages": [
             {
                 "id": "powerfx",
-                "aliases": ["Power FX", "powerfx"],
-                "extensions": [".fx"],
+                "aliases": [
+                    "Power FX",
+                    "powerfx"
+                ],
+                "extensions": [
+                    ".fx"
+                ],
                 "configuration": "./language-configuration.json"
             }
         ],
@@ -38,6 +43,13 @@
                 "label": "Power FX Theme",
                 "uiTheme": "vs-dark",
                 "path": "./themes/powerfx-color-theme.json"
+            }
+        ],
+        "iconThemes": [
+            {
+                "id": "powerfx-icons",
+                "label": "Power FX Icons",
+                "path": "./icon-theme.json"
             }
         ]
     },

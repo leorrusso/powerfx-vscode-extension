@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "powerfx-icon": {
+            "iconPath": "./icons/powerfx-icon.svg"
+        }
+    },
+    "fileExtensions": {
+        "fx": "powerfx-icon"
+    },
+    "languageIds": {
+        "powerfx": "powerfx-icon"
+    }
+}

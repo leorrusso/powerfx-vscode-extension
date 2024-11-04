@@ -41,6 +41,39 @@ Language Features
 	4.	Number and String Recognition: Automatic recognition and highlighting of numeric literals and string values.
 	5.	Operator Highlighting: Clear differentiation of mathematical and logical operators.
 
+Contributing
+
+We welcome contributions to improve and expand this extension! Here’s how you can get involved:
+
+	1.	Fork the Repository: Click on the “Fork” button at the top of the repository page on GitHub.
+	2.	Clone Your Fork:
+
+git clone https://github.com/your-username/powerfx-vscode-extension.git
+
+
+	3.	Create a New Branch:
+
+git checkout -b feature/your-feature-name
+
+
+	4.	Make Your Changes: Improve the code, fix bugs, or add new features. Make sure to follow the coding standards and guidelines.
+	5.	Test Your Changes: Run the extension in the Extension Development Host to ensure everything works as expected.
+	6.	Commit and Push:
+
+git commit -m "Description of your changes"
+git push origin feature/your-feature-name
+
+
+	7.	Open a Pull Request: Go to the original repository and open a pull request describing your changes and why they should be merged.
+
+Reporting Issues
+
+If you find any bugs or have suggestions for new features, please open an issue on the GitHub repository.
+
+Code of Conduct
+
+Please read and adhere to our Code of Conduct to ensure a welcoming environment for all contributors.
+
 Known Issues
 
 	•	Highlighting Inside Quotes: Function names and keywords will not be highlighted when used inside string literals, as intended. If you find any issues, please report them!
@@ -52,10 +85,6 @@ Setting Up
 	1.	Clone the repository and open it in Visual Studio Code.
 	2.	Press F5 to run the extension in the Extension Development Host for testing.
 
-Contributing
-
-Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or create a pull request on the GitHub repository.
-
 License
 
 This extension is licensed under the MIT License.
@@ -66,3 +95,8 @@ Acknowledgments
 	•	Special thanks to Microsoft for the Power FX language.
 
 Enjoy coding with Power FX in Visual Studio Code! If you have any questions or feedback, feel free to reach out or submit an issue.
+
+Notes
+
+	•	Make sure to replace your-username and other placeholders with your actual GitHub information.
+	•	Add a link to your LICENSE file and CODE_OF_CONDUCT.md if you create those files.

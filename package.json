@@ -2,11 +2,12 @@
     "name": "powerfx",
     "displayName": "Power FX Interpreter",
     "description": "An extension that allows to read Power FX",
-    "version": "0.0.2",
+    "icon": "icons/powerfx-icon.png",
+    "version": "0.0.4",
     "engines": {
         "vscode": "^1.95.0"
     },
-    "main": "./out/formatter.js",
+    "main": "./out/extension.js", 
     "activationEvents": [
         "onLanguage:powerfx"
     ],

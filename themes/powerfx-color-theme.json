@@ -1,6 +1,7 @@
 {
     "name": "Power FX Theme",
     "type": "dark",
+    "showLanguageModeIcons":true,
     "colors": {
         "editor.foreground": "#D4D4D4",
         "editor.background": "#1E1E1E",

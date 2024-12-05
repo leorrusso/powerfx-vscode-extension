@@ -3,60 +3,57 @@
     "displayName": "Power FX Interpreter",
     "description": "An extension that allows to read Power FX",
     "icon": "icons/powerfx-icon.png",
-    "version": "0.0.4",
+    "version": "0.0.11",
     "engines": {
-        "vscode": "^1.95.0"
+      "vscode": "^1.95.0"
     },
-    "main": "./out/extension.js", 
+    "main": "./out/extension.js",
     "activationEvents": [
-        "onLanguage:powerfx"
+      "onLanguage:powerfx"
     ],
     "categories": [
-        "Programming Languages"
+      "Programming Languages"
     ],
     "repository": {
-        "type": "git",
-        "url": "https://github.com/leorrusso/powerfx-vscode-extension"
+      "type": "git",
+      "url": "https://github.com/leorrusso/powerfx-vscode-extension"
     },
     "contributes": {
-        "languages": [
-            {
-                "id": "powerfx",
-                "aliases": [
-                    "Power FX",
-                    "powerfx"
-                ],
-                "extensions": [
-                    ".fx"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "powerfx",
-                "scopeName": "source.powerfx",
-                "path": "./syntaxes/powerfx.tmLanguage.json"
-            }
-        ],
-        "themes": [
-            {
-                "label": "Power FX Theme",
-                "uiTheme": "vs-dark",
-                "path": "./themes/powerfx-color-theme.json"
-            }
-        ],
-        "iconThemes": [
-            {
-                "id": "powerfx-icons",
-                "label": "Power FX Icons",
-                "path": "./icon-theme.json"
-            }
-        ]
+      "languages": [
+        {
+          "id": "powerfx",
+          "aliases": [
+            "Power FX",
+            "powerfx"
+          ],
+          "extensions": [
+            ".fx"
+          ],
+          "configuration": "./language-configuration.json",
+          "icon": {
+            "light": "./icons/powerfx-icon.svg",
+            "dark": "./icons/powerfx-icon.svg"
+          }
+        }
+      ],
+      "grammars": [
+        {
+          "language": "powerfx",
+          "scopeName": "source.powerfx",
+          "path": "./syntaxes/powerfx.tmLanguage.json"
+        }
+      ],
+      "themes": [
+        {
+          "label": "Power FX Theme",
+          "uiTheme": "vs-dark",
+          "path": "./themes/powerfx-color-theme.json"
+        }
+      ]
     },
     "devDependencies": {
-        "@types/vscode": "^1.77.0",
-        "typescript": "^4.0.0",
-        "vsce": "^2.0.0"
+      "@types/vscode": "^1.77.0",
+      "typescript": "^4.0.0",
+      "vsce": "^2.0.0"
     }
 }

@@ -13,58 +13,52 @@
     },
     "tokenColors": [
         {
-            "scope": "comment.line.double-slash.powerfx",
+            "scope":"meta.formula.power-fx.interpolated.formula",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#800080", // Green color for single-line comments
+            }
+        },
+        {
+            "scope": ["comment.line.double-slash.power-fx","comment.block.power-fx"],
             "settings": {
                 "foreground": "#6A9955", // Green color for single-line comments
                 "fontStyle": "italic"
             }
         },
         {
-            "scope": "comment.block.powerfx",
-            "settings": {
-                "foreground": "#6A9955", // Green color for block comments
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": "constant.language.boolean.powerfx",
+            "scope": ["constant.language.power-fx","support.function.power-fx","internal.formula","entity.name.function"],
             "settings": {
                 "foreground": "#569CD6" // Blue color for boolean literals
             }
         },
         {
-            "scope": "keyword.control.powerfx",
+            "scope": "interpolated.formula",
             "settings": {
-                "foreground": "#C586C0", // Purple color for control keywords
-                "fontStyle": "bold"
+                "foreground": "#cbbeca"
             }
         },
         {
-            "scope": "keyword.operator.powerfx",
+                "scope": ["keyword.operator.logical.power-fx","keyword.operator.arithmetic.power-fx","keyword.operator.comparison.power-fx","keyword.operator.logical.power-fx","keyword.operator.concatenation.power-fx","open.curly.braces","close.curly.braces"],
             "settings": {
-                "foreground": "#D4D4D4" // Default color for operators
+                "foreground": "#e9a5e988" // Default color for operators
             }
         },
+        
         {
-            "scope": "string.quoted.double.powerfx",
-            "settings": {
-                "foreground": "#CE9178" // Orange color for strings
-            }
-        },
-        {
-            "scope": "constant.character.escape.powerfx",
+            "scope": ["constant.character.escape.powerfx","meta.embedded.line.formula.power-fx","punctuation.section.embedded.begin.power-fx","punctuation.section.embedded.end.power-fx","punctuation.definition.parameters.begin.power-fx","punctuation.definition.parameters.end.power-fx"],
             "settings": {
                 "foreground": "#D7BA7D" // Yellow color for escape sequences
             }
         },
         {
-            "scope": "constant.numeric.powerfx",
+            "scope": ["constant.numeric.decimal.power-fx","constant.numeric.integer.power-fx"],
             "settings": {
                 "foreground": "#B5CEA8" // Light green color for numbers
             }
         },
         {
-            "scope": "variable.other.identifier.powerfx",
+            "scope": ["variable.other.identifier.powerfx","string.quoted.single.power-fx"],
             "settings": {
                 "foreground": "#D4D4D4" // Light blue color for identifiers
             }
@@ -82,9 +76,18 @@
             }
         },
         {
-            "scope": "support.function.powerfx",
+            "scope": ["support.function.powerfx","variable.other.object.power-fx","keyword.control.power-fx","formula.name"],
             "settings": {
                 "foreground": "#4eb0c9" // Teal color for application functions
+            }
+        },
+        {
+            "scope": [
+                "string.quoted.double.power-fx",
+                "string.interpolated.double.power-fx"
+            ],
+            "settings": {
+                "foreground": "#CE9178" // Orange color for strings
             }
         }
     ]

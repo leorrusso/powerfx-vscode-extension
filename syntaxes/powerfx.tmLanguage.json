@@ -1,110 +1,239 @@
 {
-    "scopeName": "source.powerfx",
-    "fileTypes": ["fx"],
-    "patterns": [
+  "scopeName": "source.powerfx",
+  "fileTypes": ["fx"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#operators" },
+    { "include": "#functions" },
+    { "include": "#keywords" },
+    { "include": "#variables" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#formulas" }
+  ],
+  "repository": {
+    "brackets": {
+      "patterns": [
         {
-            "name": "comment.line.double-slash.powerfx",
-            "match": "//.*$"
+          "name": "punctuation.bracket.square.power-fx",
+          "match": "[\\[\\]]"
         },
         {
-            "name": "comment.block.powerfx",
-            "begin": "/\\*",
-            "end": "\\*/",
-            "patterns": [
-                {
-                    "match": ".*",
-                    "name": "comment.block.content.powerfx"
-                }
-            ]
-        },
-        {
-            "name": "constant.language.boolean.powerfx",
-            "match": "\\b(true|false)\\b"
-        },
-        {
-            "name": "keyword.control.powerfx",
-            "match": "\\b(If|Switch|And|Or|Not|Parent|Self|ThisItem|ThisRecord)\\b"
-        },
-        {
-            "name": "keyword.operator.powerfx",
-            "match": "(=|<|>|<=|>=|<>|\\+|\\-|\\*|\\/|\\^|&&|\\|\\||&|in|exactin|%)"
-        },
-        {
-            "name": "string.quoted.double.powerfx",
-            "begin": "\\$\"",
-            "end": "\"",
-            "patterns": [
-                {
-                    "name": "constant.character.escape.powerfx",
-                    "match": "\\\\."
-                },
-                {
-                    "name": "string.quoted.double.content.powerfx",
-                    "match": "[^\"]+",
-                    "captures": {
-                        "0": { "name": "string.quoted.double.content.powerfx" }
-                    }
-                },
-                {
-                    "begin": "\\{",
-                    "end": "\\}",
-                    "name": "meta.embedded.expression.powerfx",
-                    "patterns": [
-                        {
-                            "include": "#powerfx-code" 
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "string.quoted.single.powerfx",
-            "begin": "'",
-            "end": "'",
-            "patterns": [
-                {
-                    "name": "constant.character.escape.powerfx",
-                    "match": "\\\\."
-                },
-                {
-                    "name": "string.quoted.single.content.powerfx",
-                    "match": "[^']+"
-                }
-            ]
-        },
-        {
-            "name": "constant.numeric.powerfx",
-            "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
-        },
-        {
-            "name": "support.function.powerfx",
-            "match": "\\b(Abs|Acceleration|Acos|Acot|AddColumns|AIClassify|AIExtract|AIReply|AISentiment|AISummarize|AITranslate|App|Asin|Assert|As|AsType|Atan|Atan2|Average|Back|Blank|Boolean|Calendar|Char|Choices|Clear|ClearCollect|ClearData|Clock|Coalesce|Collect|Color|ColorFade|ColorValue|Column|ColumnNames|Compass|Concat|Concatenate|Concurrent|Connection|Copy|Count|Cos|Cot|CountA|CountIf|CountRows|DataSourceInfo|Date|DateAdd|DateDiff|DateTime|DateTimeValue|DateValue|Day|Dec2Hex|Defaults|Degrees|Disable|Distinct|Download|DropColumns|EDate|EditForm|Enable|EncodeHTML|EncodeUrl|EndsWith|EOMonth|Error|Errors|exactin|Exit|Exp|Filter|Find|First|FirstN|ForAll|GroupBy|GUID|HashTags|Hex2Dec|Host|Hour|If|IfError|in|Index|Int|IsBlank|IsBlankOrError|IsEmpty|IsError|IsMatch|IsNumeric|ISOWeekNum|IsToday|IsType|IsUTCToday|JSON|Language|Last|LastN|Launch|Left|Len|Ln|LoadData|Location|Log|LookUp|Lower|Match|MatchAll|Max|Mid|Min|Minute|Mod|Month|Navigate|NewForm|Not|Notify|Now|Or|Param|Parent|ParseJSON|Patch|PDF|Pi|PlainText|Power|Proper|Radians|Rand|RandBetween|ReadNFC|RecordInfo|Refresh|Relate|Remove|RemoveIf|RenameColumns|Replace|RequestHide|Reset|ResetForm|Revert|RGBA|Right|Round|RoundDown|RoundUp|SaveData|Search|Second|Select|Self|Sequence|SendAppNotification|Set|SetFocus|SetProperty|ShowColumns|ShowHostInfo|Shuffle|Sin|Sort|SortByColumns|Split|Sqrt|StartsWith|StdevP|Substitute|SubmitForm|Sum|Switch|Table|Tan|Text|ThisItem|ThisRecord|Time|TimeValue|TimeZoneOffset|Today|Trace|Trim|TrimEnds|Trunc|Ungroup|UniChar|Unrelate|Update|UpdateContext|UpdateIf|Upper|User|UTCNow|UTCToday|Validate|Value|VarP|ViewForm|Weekday|WeekNum|With|Year)\\b"
-        },
-        {
-            "name": "string.interpolated.powerfx",
-            "begin": "\\$\"",
-            "end": "\"",
-            "patterns": [
-                {
-                    "name": "constant.character.escape.powerfx",
-                    "match": "\\\\."
-                },
-                {
-                    "name": "interpolation.powerfx",
-                    "begin": "\\{",
-                    "end": "\\}",
-                    "patterns": [
-                        {
-                            "include": "#expressions"
-                        }
-                    ]
-                },
-                {
-                    "name": "string.interpolated.content.powerfx",
-                    "match": "[^\"]+"
-                }
-            ]
+          "name": "punctuation.bracket.curly.power-fx",
+          "match": "[{}]"
         }
-    ],
-    "uuid": "12345678-90ab-cdef-1234-567890abcdef"
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.power-fx",
+          "match": "//.*$",
+          "captures": {
+            "0": { "name": "punctuation.definition.comment.power-fx" }
+          }
+        },
+        {
+          "name": "comment.block.power-fx",
+          "begin": "/\\*",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.comment.begin.power-fx" }
+          },
+          "end": "\\*/",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.comment.end.power-fx" }
+          }
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.power-fx",
+          "match": "\\+|\\-|\\*|/|\\^|%"
+        },
+        {
+          "name": "keyword.operator.comparison.power-fx",
+          "match": "=|<>|>|<|>=|<="
+        },
+        {
+          "name": "keyword.operator.logical.power-fx",
+          "match": "\\b(And|Or|Not)\\b"
+        },
+        {
+          "name": "keyword.operator.concatenation.power-fx",
+          "match": "&"
+        }
+      ]
+    },
+
+    "keywords": {
+      "patterns": [
+        {
+          "name": "constant.language.power-fx",
+          "match": "\\b(true|false|blank)\\b"
+        }
+      ]
+    },
+
+    "functions": {
+      "begin": "\\b([A-Za-z][A-Za-z0-9_]*)\\s*(\\()",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.power-fx" },
+        "2": { "name": "punctuation.definition.parameters.begin.power-fx" }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.parameters.end.power-fx" }
+      },
+      "patterns": [
+        { "include": "#functions" },
+        { "include": "#expressions" },
+        { "include": "#strings" },
+        { "include": "#numbers" },
+        { "include": "#keywords" },
+        { "include": "#comments" },
+        {
+          "name": "support.function.power-fx",
+          "match": "\\b(Abs|Acceleration|Acos|Acot|AddColumns|AIClassify|AIExtract|AIReply|AISentiment|AISummarize|AITranslate|App|Asin|Assert|As|AsType|Atan|Atan2|Average|Back|Blank|Boolean|Calendar|Char|Choices|Clear|ClearCollect|ClearData|Clock|Coalesce|Collect|Color|ColorFade|ColorValue|Column|ColumnNames|Compass|Concat|Concatenate|Concurrent|Connection|Copy|Count|Cos|Cot|CountA|CountIf|CountRows|DataSourceInfo|Date|DateAdd|DateDiff|DateTime|DateTimeValue|DateValue|Day|Dec2Hex|Defaults|Degrees|Disable|Distinct|Download|DropColumns|EDate|EditForm|Enable|EncodeHTML|EncodeUrl|EndsWith|EOMonth|Error|Errors|exactin|Exit|Exp|Filter|Find|First|FirstN|ForAll|GroupBy|GUID|HashTags|Hex2Dec|Host|Hour|If|IfError|in|Index|Int|IsBlank|IsBlankOrError|IsEmpty|IsError|IsMatch|IsNumeric|ISOWeekNum|IsToday|IsType|IsUTCToday|JSON|Language|Last|LastN|Launch|Left|Len|Ln|LoadData|Location|Log|LookUp|Lower|Match|MatchAll|Max|Mid|Min|Minute|Mod|Month|Navigate|NewForm|Not|Notify|Now|Or|Param|Parent|ParseJSON|Patch|PDF|Pi|PlainText|Power|Proper|Radians|Rand|RandBetween|ReadNFC|RecordInfo|Refresh|Relate|Remove|RemoveIf|RenameColumns|Replace|RequestHide|Reset|ResetForm|Revert|RGBA|Right|Round|RoundDown|RoundUp|SaveData|Search|Second|Select|Self|Sequence|SendAppNotification|Set|SetFocus|SetProperty|ShowColumns|ShowHostInfo|Shuffle|Sin|Sort|SortByColumns|Split|Sqrt|StartsWith|StdevP|Substitute|SubmitForm|Sum|Switch|Table|Tan|Text|ThisItem|ThisRecord|Time|TimeValue|TimeZoneOffset|Today|Trace|Trim|TrimEnds|Trunc|Ungroup|UniChar|Unrelate|Update|UpdateContext|UpdateIf|Upper|User|UTCNow|UTCToday|Validate|Value|VarP|ViewForm|Weekday|WeekNum|With|Year|JSONFormat)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "match": "\\b[@]([A-Za-z][A-Za-z0-9_]*)\\b",
+          "captures": {
+            "0": { "name": "variable.other.local.power-fx" },
+            "1": { "name": "entity.name.variable.local.power-fx" }
+          }
+        },
+        {
+          "match": "\\b([A-Za-z][A-Za-z0-9_]*?)(?=\\.[A-Za-z])",
+          "name": "variable.other.object.power-fx"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.power-fx",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.string.begin.power-fx" }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.string.end.power-fx" }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.power-fx",
+              "match": "\\\\\""
+            }
+          ]
+        },
+        {
+          "name": "string.interpolated.double.power-fx",
+          "begin": "\\$(\")",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.interpolated.begin.power-fx"
+            },
+            "1": { "name": "punctuation.definition.string.begin.power-fx" }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.string.end.power-fx" }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.power-fx",
+              "match": "\\\\\""
+            },
+            {
+              "name": "interpolated.formula",
+              "begin": "{",
+              "beginCaptures": {
+                "0": { "name": "open.curly.braces" }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "close.curly.braces"
+                }
+              },
+              "patterns": [
+                {
+                  "name": "powerfx.formulas",
+                  "patterns": [{ "include": "#functions" }]
+                },
+                {
+                  "name": "powerfx.numbers",
+                  "patterns": [{ "include": "#numbers" }]
+                },
+                {
+                  "name": "powerfx.keywords",
+                  "patterns": [{ "include": "#keywords" }]
+                },
+                {
+                  "name": "powerfx.operators",
+                  "patterns": [{ "include": "#operators" }]
+                },
+                {
+                  "name": "powerfx.brackets",
+                  "patterns": [{ "include": "#brackets" }]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.power-fx",
+          "begin": "'",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.string.begin.power-fx" }
+          },
+          "end": "'",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.string.end.power-fx" }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.power-fx",
+              "match": "\\\\'"
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.decimal.power-fx",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.power-fx",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "formulas": {
+      "patterns": [
+        {
+          "name": "meta.formula.power-fx",
+          "patterns": [
+            { "include": "#operators" },
+            { "include": "#functions" },
+            { "include": "#keywords" },
+            { "include": "#variables" },
+            { "include": "#strings" },
+            { "include": "#numbers" }
+          ]
+        }
+      ]
+    }
+  },
+  "uuid": "12345678-90ab-cdef-1234-567890abcdef"
 }

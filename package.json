@@ -3,7 +3,7 @@
     "displayName": "Power FX Interpreter",
     "description": "An extension that allows to read Power FX",
     "icon": "icons/powerfx-icon.png",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "publisher": "PowerAppsTools",
     "engines": {
       "vscode": "^1.95.0"

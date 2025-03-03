@@ -13,6 +13,7 @@ Welcome to the Power FX Language Support extension for Visual Studio Code! This 
 	•	String Literals: Support for single and double-quoted strings
 	•	Numbers: Recognition of numeric constants
 	•	Files Icons: visualize .fx files with Power FX official icon
+	•	Support for `*.pa.yaml` files: Syntax highlighting for Power FX inside `*.pa.yaml` files, ensuring that only elements in the YAML that start with `=` after the `:` have Power FX highlighting applied.
 
 
 ## Contributing

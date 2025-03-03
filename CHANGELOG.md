@@ -21,3 +21,8 @@ All notable changes to the "Power FX Interpreter" extension will be documented i
 ## [1.0.12] - Previous release
 
 - Initial features and functionality
+
+## [1.0.14] - 2025-03-01
+
+### Added
+- Support for `*.pa.yaml` files: Syntax highlighting for Power Fx inside `*.pa.yaml` files, ensuring that only elements in the YAML that start with `=` after the `:` have Power Fx highlighting applied.
